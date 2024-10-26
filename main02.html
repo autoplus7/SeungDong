@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 완료</title>
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .welcome-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .home-button {
+            padding: 6px 12px;
+            font-size: 0.9em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+        .small-icon {
+            width: 30px;
+            height: 30px;
+        }
+        .welcome-message {
+            font-size: 1em;
+            color: #333;
+        }
+        .phone-number {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .divider {
+            border-top: 1px solid #87CEEB;
+            margin: 15px 0;
+        }
+        /* 메뉴 버튼 스타일 */
+        .menu-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .menu-button {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            color: #333;
+            border: 1px solid #87CEEB;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+        .menu-button:hover {
+            background-color: #f0f8ff;
+        }
+        .menu-button:active {
+            border-color: #FFD700;
+        }
+        /* 검색 및 결과 스타일 */
+        .search-container {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .search-category {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .category-select, .search-btn, .reset-btn {
+            padding: 8px;
+            font-size: 0.9em;
+            border: 1px solid #87CEEB;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .search-btn:hover, .reset-btn:hover {
+            background-color: #f0f8ff;
+        }
+        .results {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        /* 주문 방법 버튼 */
+        .order-methods {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .order-method-btn {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #87CEEB;
+            border-radius: 4px;
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            text-align: center;
+        }
+        .order-method-btn.active {
+            background-color: #87CEEB;
+            color: white;
+        }
+        /* iframe 스타일 */
+        .order-iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <!-- 헤더 섹션 -->
+        <div class="header">
+            <a href="index.html" class="home-button">홈</a>
+            <div class="welcome-message">
+                <img src="aitipimg/img/로고.png" alt="로고 아이콘" class="small-icon">
+                환영합니다! <span class="phone-number" id="phoneNumber"></span>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- 메뉴 버튼 섹션 -->
+        <div class="menu-buttons">
+            <button class="menu-button" id="searchBtn">검색</button>
+            <button class="menu-button">주문</button>
+            <button class="menu-button">예약</button>
+            <button class="menu-button">구매</button>
+            <button class="menu-button">My</button>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- 검색 영역 -->
+        <div class="search-container" id="searchContainer">
+            <div class="search-category">
+                <label for="category">대분류:</label>
+                <select id="category" class="category-select">
+                    <option value="치킨">치킨</option>
+                    <option value="중식">중식</option>
+                    <option value="기타">기타</option>
+                </select>
+                <button class="search-btn" id="searchExecuteBtn">검색</button>
+                <button class="reset-btn" id="resetBtn">다시</button>
+            </div>
+        </div>
+        
+        <!-- 결과 영역 -->
+        <div class="results" id="results"></div>
+        
+        <!-- iframe 영역 -->
+        <iframe id="orderIframe" class="order-iframe"></iframe>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const phoneNumber = params.get('phone');
+        
+        if (phoneNumber) {
+            document.getElementById('phoneNumber').textContent = phoneNumber;
+        }
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.style.display = (searchContainer.style.display === 'none') ? 'block' : 'none';
+            document.getElementById('results').innerHTML = '';
+            searchCount = 0; // 검색 초기화
+        });
+
+        let searchCount = 0;
+        document.getElementById('searchExecuteBtn').addEventListener('click', function() {
+            const results = document.getElementById('results');
+            if (searchCount < 3) {
+                searchCount++;
+                
+                const today = new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+                resultItem.innerHTML = `
+                    <strong>날짜:</strong> ${today}<br>
+                    <strong>가맹점명:</strong> 대한치킨<br>
+                    <strong>주문방법:</strong>
+                    <div class="order-methods">
+                        <button class="order-method-btn" id="phoneOrderBtn">전화</button>
+                        <button class="order-method-btn appOrderBtn">앱</button>
+                        <button class="order-method-btn chatOrderBtn">Chat</button>
+                    </div>
+                `;
+                results.appendChild(resultItem);
+
+                resultItem.querySelectorAll('.order-method-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        resultItem.querySelectorAll('.order-method-btn').forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        
+                        const orderIframe = document.getElementById('orderIframe');
+                        if (button.classList.contains('appOrderBtn')) {
+                            orderIframe.src = 'order.html';
+                            orderIframe.style.display = 'block';
+                        } else if (button.classList.contains('chatOrderBtn')) {
+                            orderIframe.src = 'chat.html'; // 챗봇 대화 페이지
+                            orderIframe.style.display = 'block';
+                        } else if (button.id === 'phoneOrderBtn') {
+                            window.location.href = 'tel:070-5222-4130';
+                        }
+                    });
+                });
+            }
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            document.getElementById('category').selectedIndex = 0;
+            document.getElementById('results').innerHTML = '';
+            searchCount = 0;
+            document.getElementById('orderIframe').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

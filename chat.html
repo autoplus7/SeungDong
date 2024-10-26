@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챗봇 대화</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .chat-output {
+            flex: 1;
+            overflow-y: auto;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        .input-field {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #87CEEB;
+            border-radius: 4px;
+        }
+        .send-button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .bot-message {
+            color: #0056b3; /* AitTip 진한 파랑색 */
+            margin-bottom: 5px;
+        }
+        .user-message {
+            color: #333;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-output" id="chatOutput">
+            <!-- 대화 내용이 표시될 영역 -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" class="input-field" placeholder="메시지를 입력하세요...">
+            <button id="sendButton" class="send-button">전송</button>
+        </div>
+    </div>
+
+    <script>
+        const chatOutput = document.getElementById('chatOutput');
+        const userInput = document.getElementById('userInput');
+        const phoneNumber = new URLSearchParams(window.location.search).get('phone') || '사용자'; // phone 파라미터 추출
+        const responses = [
+            "AitTip: 무엇을 도와 드릴까요?",
+            "AitTip: 네, 대한치킨에 주문을 도와 드리겠습니다.",
+            "AitTip: 지금은 Aitip과 연동 테스트여서 그렇습니다.",
+            "AitTip: 네 메뉴판을 보여 드리겠습니다.",
+            "AitTip: 감사합니다. 당신의 관심이 AiTip 서비스를 확대할 수 있습니다.",
+            "AitTip: 감사합니다. 메뉴판을 확인하시어 주문하세요."
+        ];
+        let responseIndex = 0;
+
+        // 초기 챗봇 메시지 표시
+        function addBotMessage() {
+            const botMessage = document.createElement('div');
+            botMessage.className = 'bot-message';
+            botMessage.textContent = responses[responseIndex];
+            chatOutput.appendChild(botMessage);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+        addBotMessage();  // 첫 메시지 출력
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message && responseIndex < responses.length - 1) {
+                // 로그인자(휴대폰 번호) 메시지 추가
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = `${phoneNumber}: ${message}`;
+                chatOutput.appendChild(userMessage);
+
+                // 챗봇 응답 추가
+                responseIndex++;
+                addBotMessage();
+
+                // 입력 초기화 및 스크롤 조정
+                userInput.value = '';
+                chatOutput.scrollTop = chatOutput.scrollHeight;
+            } else if (responseIndex === responses.length - 1) {
+                // 모든 응답이 끝났을 때 부모 `iframe`에 `order.html`을 로드
+                setTimeout(() => {
+                    parent.document.getElementById('orderIframe').src = 'order.html';
+                }, 1000); // 1초 지연 후 `iframe`에 로드
+            }
+        }
+
+        // 엔터 키 또는 전송 버튼 클릭으로 메시지 전송
+        userInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        document.getElementById('sendButton').addEventListener('click', sendMessage);
+    </script>
+</body>
+</html>

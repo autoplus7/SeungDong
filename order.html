@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/bootstrap.min.css">
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/all.min.css" type="text/css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/toastr.min.css">
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/style.css" type="text/css">
+
+
+    <title>    치킨</title>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://talk.mediain.co.kr/js/guest/jquery.min.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/popper.min.js" ></script>
+    <script src="http://talk.mediain.co.kr/js/guest/bootstrap.min.js" ></script>
+</head>
+<body>
+    <!--#siteSubHead-->
+    <section id="siteSubHead" class="site-subhead">
+    <div class="container">
+        <nav class="nav"> 
+            <div class="multiple-language">
+                <i class="fas fa-globe"></i>
+                <form>
+                <script type="text/javascript">
+                function go_url(url)
+                {
+                    if(url != '')   window.open(url,'_self');
+                }
+                </script>
+
+                <select name="select" onchange="javascript:go_url(this.options[this.selectedIndex].value);" class="form-control">
+                    <option selected>Language</option>
+                    <option value="/ko">Korea</option>
+                    <option value="/en">English</option>
+                </select>
+                </form>
+            </div>
+            <div class="account">
+                <div class="dropdown">
+                                                <a href="/ko/login">Login</a>/
+                            <a href="/ko/register">Register</a>
+                                    </div>
+            </div>
+        </nav>
+    </div>
+</section>    <!--#siteHeader-->
+    <header id="siteHeader" class="site-header sticky">
+        <div class="container header-inner">
+        <h1 class="logo">
+            <a href="/ko">
+                <img src="http://talk.mediain.co.kr/images/logo.png" alt="Logo">
+            </a> 
+        </h1>
+
+        <!--div class="search_box">
+                <form action="/ko/sale" onsubmit="return chkForm(this)" style="margin:0; padding:0; border:none;">
+					<span class='green_window'><input name="keyword" type="text" placeholder="검색어를 3자 이상 입력하세요." class="search_input" onkeyup="" onclick="" value=""></span>
+					<button type='submit' class='search_btn'><i class="fas fa-search"></i></button>
+                </form>
+        </div-->  
+
+
+        <nav class="nav">
+            <!--button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button-->
+
+            <ul id="navbarSupportedContent" class="main-menu">
+                <li>
+                    <b><a href="/ko/sale">치킨</a></b>
+                    <!--ul class="sub-menu">
+                        <li><a href="/ko/sale">치킨</a></li>
+                        <li><a href="/ko/sale/inquiry/0">견적문의</a></li>
+                    </ul-->
+                </li>
+                <!--li>
+                    <b><a> 회 사 정 보 <i class="fas fa-caret-down"></i></a></b>
+                    <ul class="sub-menu">
+                        <li><a href="/ko/contact/location">회사소개</a></li>
+                        <li><a href="/ko/contact/mainbrand">주요브랜드</a></li>
+                        <li><a href="/ko/contact/notice">리스트</a></li>
+                        <li><a href="/ko/contact/news">게시판</a></li>
+                    </ul>
+                </li>
+                <li class="item-cart">
+                    <div class="cart">
+                        <a href="/ko/cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge count-cart">0</span>
+                        </a>
+                    </div>
+                </li-->
+            </ul>
+                    <div class="cart">
+                        <a href="/ko/cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge count-cart">0</span>
+                        </a>
+                    </div>
+        </nav>
+    </div>
+</header>
+    <!--#Breadcrumb-->
+        <section id="siteBreadcrumb" class="site-breadcrumb">
+    <div class="container">
+        <ul>
+                                                                        <li>
+                            <a href="/ko">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                                                                                                            <li>
+                            <i class="fas fa-angle-right"></i>
+                                                            상품분류                                                    </li>
+                                                                                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        치킨                    </li>
+                                    </ul>
+    </div>
+</section>
+    <!--#siteMain-->
+<!--    <div class="content">-->
+        <!--#siteMain-->
+<section id="siteMain" class="site-main">
+
+    <div class="container">
+        <h2 class="form-title">치킨</h2>
+
+<!--#select start-->
+<!--ul class="search_box">
+        <li>
+                <div>
+                    <div class="form-search">
+                        <form action="/ko/sale/scproduct" method="get">
+                            <select style="width:300px;" class="form-control" name="Manufacturer" id="parent_select"><option>Select a Manufacturer</option></select>
+                            <select style="width:500px;" class="form-control" name="category" id="child_select"></select>
+                            <input style="width:500px;" type="text" name="keyword" class="form-control" minlength="3" placeholder="검색어를 3자 이상 입력하세요." value="">
+                            <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+        </li>
+</ul-->  
+
+<script language="javascript" type="text/javascript">  
+var mList = {
+	AVENTICS : ['', 'Pneumatic cylinders', 'Drives and grippers', 'Cylinder accessories', 'Valves and Valve Systems', 'Valves and valve systems according to standard', 'Pressure regulators', 'Flow and check valves', 'Compressed Air Preparation', 'Vacuum technology', 'Sensor technology', 'Pneumatic Connection Technology', 'Electrical connection technology', 'Smart Pneumatics'],
+	ETC :  ['', '', '']
+};
+
+el_parent = document.getElementById("parent_select");
+el_child = document.getElementById("child_select");
+
+for (key in mList) {
+	el_parent.innerHTML = el_parent.innerHTML + '<option>'+ key +'</option>';
+}
+el_parent.addEventListener('change', function populate_child(e){
+	el_child.innerHTML = '';
+	itm = e.target.value;
+	if(itm in mList){
+			for (i = 0; i < mList[itm].length; i++) {
+				el_child.innerHTML = el_child.innerHTML + '<option value="'+ mList[itm][i] +'">'+ mList[itm][i] +'</option>';
+			}
+	}
+});
+</script>
+<!--#Select end-->
+
+        <ul class="sale-list">
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="30"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/30/1665544238_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리블랙시크릿오리지날                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리블랙시크릿오리지날" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        다섯 가지 맛과 향을 내는 오향에 맛 간장과 흑임자,                     </div>
+                    <div class="sale_price">
+                        20,000                        <input type="hidden" class="form-control number text-right" name="price" value="20000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/30">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="29"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/29/1665544144_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리블랙시크릿순살                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리블랙시크릿순살" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        다섯 가지 맛과 향을 내는 오향에 맛 간장과 흑임자,                     </div>
+                    <div class="sale_price">
+                        23,000                        <input type="hidden" class="form-control number text-right" name="price" value="23000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/29">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="28"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/28/1665544105_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리오리지날                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리오리지날" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        우리만의 차별화된 마늘과 간장 소스의 풍부한 맛이 어우                    </div>
+                    <div class="sale_price">
+                        16,000                        <input type="hidden" class="form-control number text-right" name="price" value="16000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/28">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="27"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/27/1665544032_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리매콤윙                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리매콤윙" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        마늘과 간장소스의 풍부한 맛이 묻어나는 날개와 봉의 멋                    </div>
+                    <div class="sale_price">
+                        19,000                        <input type="hidden" class="form-control number text-right" name="price" value="19000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/27">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="26"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/26/1665543716_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리 스틱                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리 스틱" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        마늘과 간장 소스의 풍부한 맛과 다리부위의 담백한 맛이                    </div>
+                    <div class="sale_price">
+                        19,000                        <input type="hidden" class="form-control number text-right" name="price" value="19000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/26">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="25"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/25/1665543634_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리 콤보                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리 콤보" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        마늘과 간장소스의 풍부한 맛에 가장 인기있는 부위인 날                    </div>
+                    <div class="sale_price">
+                        19,000                        <input type="hidden" class="form-control number text-right" name="price" value="19000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/25">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="24"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/24/1665543501_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리허니오리지날                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리허니오리지날" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        달콤 바삭한 맛이 일품인 한 마리 치킨                    </div>
+                    <div class="sale_price">
+                        16,000                        <input type="hidden" class="form-control number text-right" name="price" value="16000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/24">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="23"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/23/1665543412_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리허니콤보                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리허니콤보" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        달콤한 허니소스에 쫄깃한 날개와 담백한 다리가 만난 메                    </div>
+                    <div class="sale_price">
+                        20,000                        <input type="hidden" class="form-control number text-right" name="price" value="20000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/23">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                            <form id="form" action="/ko/sale/inquiry/part" method="post">
+                <input type="hidden" name="part_sequence" value="22"/>
+                <input type="hidden" name="inquiry_code" value="IQR1729557060"/>
+                <input type="hidden" name="member_id" value=""/>
+                <input type="hidden" name="manufacturer_name" value="etc"/>
+
+                <li class="sale">
+                    <div class="sale_image">
+                                                    <img src="http://talk.mediain.co.kr/upload/items/22/1665543430_file.png"/>
+                                            </div>
+                    <div class="sale_part_number">
+                            우리레드오리지날                        <input id="name" type="hidden" class="form-control" name="part_number" value="우리레드오리지날" placeholder="메뉴명" aria-describedby="part_number"/>
+                    </div>
+                    <div class="sale_description">
+                        국내산 청양 홍고추의 매콤함이 일품인 한 마리 우리레드                    </div>
+                    <div class="sale_price">
+                        17,000                        <input type="hidden" class="form-control number text-right" name="price" value="17000" placeholder="단가" aria-describedby="price"/>원                    </div>
+                    <div class="sale_quantity">
+                        <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                    </div>
+                    
+                    <div class="sale_button">
+                        <!--a href="/ko/sale/inquiry/22">장바구니담기</a-->
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            장바구니담기                        </button>
+                    </div>
+
+                </form>
+
+                </li>
+
+                                </ul>
+
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page" class="navigation-paging">
+    <div class="paging-display-total-row">
+        <span class=""> Totals : </span>
+        <span class="p-1">9</span>
+    </div>
+    <div class="paging-display-select">
+        <span class="pl-5">Per page : </span>
+        
+        <select class="form-control" name="page_offset">
+                            <option data-value="20"  selected  value="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1&perpage=20">20</option>
+                            <option data-value="30"  value="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1&perpage=30">30</option>
+                            <option data-value="40"  value="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1&perpage=40">40</option>
+                            <option data-value="50"  value="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1&perpage=50">50</option>
+                    </select>
+    </div>
+    <div class="paging-display-number">
+        <span class="pl-5"> Page : </span>
+        <span class="p-1">1 / 1</span>
+        <input type="hidden" name="current_page" value="1">
+        <input type="hidden" name="per_page" value="20">
+        <input type="hidden" name="total_page" value="1">
+        <input type="hidden" name="total_record" value="9"/>
+    </div>
+
+    <div class="pagination-wrapper">
+        <ul class="pagination">
+            <li class="page-first page-item disabled">
+                <a class="page-link" href="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1" tabindex="-1">First</a>
+            </li>
+            <li class="page-previous page-item disabled">
+                <a class="page-link" href="" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+
+                                                <li class="page-item active">
+                        <a class="page-link" href="javascript::void(0)">
+                            1                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                            
+            <li class="page-next page-item disabled">
+                <a class="page-link" href="" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+            <li class="page-last page-item disabled">
+                <a class="page-link" href="http://talk.mediain.co.kr/index.php/ko/sale?shopid=ABCD123458&phone=01088980037&page=1">Last</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('select[name=page_offset]').on('change',function () {
+            let url = $(this).val();
+            let perPageSelect = Number.parseInt($(this).find('option:selected').attr('data-value'));
+            let totalRow = Number.parseInt($('input[name=total_record]').val());
+            let maxPage =   Math.floor(totalRow/perPageSelect);
+            if(maxPage * perPageSelect < totalRow){
+                maxPage = maxPage+ 1;
+            }
+            let currentPage = Number.parseInt($('input[name=current_page]').val());
+            if(maxPage < currentPage){
+                url = url.replace("page="+currentPage, "page="+maxPage);
+            }
+            window.location = url;
+        });
+    });
+</script>
+            </div>
+        </div>
+
+                    <div class="cart">
+                        <a href="/ko/cart">
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">장바구니 보기</button>
+                        </a>
+                    </div>
+
+    </div>
+
+</section>
+<!--    </div>-->
+    <footer id="siteFooter" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="flogo"><a href="/"><img src=" http://talk.mediain.co.kr/images/logo.png" alt=""/></a></h1>
+                <!--nav class="socials">
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-youtube-square"></i></a>
+                </nav-->
+            </div>
+            <div class="col-12 col-md-8">
+                <!--nav class="nav">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" class="parent"> 상품분류 </a>
+                            <a href="/ko/sale">치킨</a>
+                            <a href="/ko/contact/inquiry">견적문의</a>
+                        </li>
+                        <li>
+                            <a href="#" class="parent"> 회 사 정 보 </a>
+                            <a href="/ko/contact/location">회사소개</a>
+                            <a href="/ko/contact/mainbrand">주요브랜드</a>
+                            <a href="/ko/contact/notice">리스트</a>
+                            <a href="/ko/contact/news">게시판</a>
+                        </li>
+                    </ul>
+                </nav-->
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+            <p>Copyright &copy; <a href="/ko">talk.mediain.co.kr</a>. All rights reserved<a href="/ko/contact/notice">.</a></p>
+    </div>
+</footer>
+    <!--Body Js-->
+    <!-- Optional JavaScript -->
+     <script src="http://talk.mediain.co.kr/js/guest/modal_ko.js"></script>
+    <!-- Validation JS -->
+    <script src="http://talk.mediain.co.kr/js/jquery.validate.js"></script>
+    <script src="http://talk.mediain.co.kr/js/additional-methods.min.js"></script>
+    <script src="http://talk.mediain.co.kr/js/jquery.validator.addMethod.js"></script>
+            <script>
+            let validation = null;
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            var stickyOffset = $('.sticky').offset().top;
+
+            $(window).scroll(function(){
+                var sticky = $('.sticky'),
+                    scroll = $(window).scrollTop();
+
+                if (scroll >= stickyOffset) sticky.addClass('fixed');
+                else sticky.removeClass('fixed');
+            });
+
+            // set min height for main content
+            var siteHeader = $('#siteHeader').height(),
+                siteSubHead = $('#siteSubHead').height(),
+                siteFooter = $('#siteFooter').height(),
+                siteViewport = $(window).height();
+            $('#siteMain').css('min-height', siteViewport - siteFooter - siteHeader - siteSubHead);
+        })
+    </script>
+
+        <script src="http://talk.mediain.co.kr/js/guest/check_all.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/form.input.number.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/bootstrap-input-spinner.js"></script>
+    <script>
+        $("input[type='number']").inputSpinner();
+        CartJS.init();
+    </script>
+
+
+
+
+    <!-- Input hide -->
+    <input type="hidden" name="is_login" value="0"/>
+
+    <!-- Include Model -->
+    <style>
+    .loading{
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        height: 100%;
+        width: 100%;
+        display: fixed;
+        justify-content: center;
+        align-items: center;
+        z-index: 1072;
+
+    }
+    .loading img{
+        position: absolute;
+        z-index: 1073;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 200px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    @media (max-width: 767px){
+        .loading img{
+            width: 120px;
+        }
+    }
+</style>
+
+<div class='loading' id="loading" style="display: none">
+    <img src="http://talk.mediain.co.kr/images/spiner.svg" alt="loading"/>
+</div>
+    <!-- Modal -->
+    <div class="modal fade show" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog modal-success" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal title</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p> <span id="confirm-content"></span> ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary name-cancel btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                <form class="inline" action="route" method="post" id="formHolder">
+                    <button class="btn btn-success name-ok btn-ok" type="button">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function dataSuccessPopup() {
+        $('.successPopupClick').each(function () {
+            $(this).on('click', function () {
+                let $url = $(this).attr('data-url');
+                let $dataContent = $(this).attr('data-content');
+                let $title = $(this).attr('data-title');
+                let $nameCancel = $(this).attr('data-name-cancel');
+                let $nameOK = $(this).attr('data-name-ok');
+                $('#successModal #formHolder').attr('action', $url);
+                $('#successModal #confirm-content').html($dataContent);
+                $('#successModal .modal-title').html($title);
+                $('#successModal .name-cancel').html($nameCancel);
+                $('#successModal .name-ok').html($nameOK);
+                $('#successModal').modal();
+            });
+        });
+
+    }
+    $(document).ready(function () {
+        dataSuccessPopup();
+    })
+</script>
+    <div class="modal fade show" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog modal-danger" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal title</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p> <span id="confirm-content"></span> ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary name-cancel btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                <form class="inline" action="route" method="post" id="formHolder">
+                    <button class="btn btn-danger name-ok btn-ok" type="button">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function dataDangerPopup() {
+        $('.dangerPopupClick').each(function () {
+            $(this).on('click', function () {
+                let $url = $(this).attr('data-url');
+                let $dataContent = $(this).attr('data-content');
+                let $title = $(this).attr('data-title');
+                let $nameCancel = $(this).attr('data-name-cancel');
+                let $nameOK = $(this).attr('data-name-ok');
+                $('#dangerModal #formHolder').attr('action', $url);
+                $('#dangerModal #confirm-content').html($dataContent);
+                $('#dangerModal .modal-title').html($title);
+                $('#dangerModal .name-cancel').html($nameCancel);
+                $('#dangerModal .name-ok').html($nameOK);
+            });
+        });
+
+    }
+    $(document).ready(function () {
+        dataDangerPopup();
+    })
+</script>
+
+    <!-- Data Validation -->
+    <div class="hide">
+    <input type="hidden" name="url_validation_is_unique" value="/validation/is-unique"/>
+</div>
+</body>
+</html>

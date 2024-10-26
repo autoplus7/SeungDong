@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/bootstrap.min.css">
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/all.min.css" type="text/css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/toastr.min.css">
+    <link rel="stylesheet" href="http://talk.mediain.co.kr/css/guest/style.css" type="text/css">
+
+
+    <title>    주문완료</title>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://talk.mediain.co.kr/js/guest/jquery.min.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/popper.min.js" ></script>
+    <script src="http://talk.mediain.co.kr/js/guest/bootstrap.min.js" ></script>
+</head>
+<body>
+    <!--#siteSubHead-->
+    <section id="siteSubHead" class="site-subhead">
+    <div class="container">
+        <nav class="nav"> 
+            <div class="multiple-language">
+                <i class="fas fa-globe"></i>
+                <form>
+                <script type="text/javascript">
+                function go_url(url)
+                {
+                    if(url != '')   window.open(url,'_self');
+                }
+                </script>
+
+                <select name="select" onchange="javascript:go_url(this.options[this.selectedIndex].value);" class="form-control">
+                    <option selected>Language</option>
+                    <option value="/ko">Korea</option>
+                    <option value="/en">English</option>
+                </select>
+                </form>
+            </div>
+            <div class="account">
+                <div class="dropdown">
+                                                <a href="/ko/login">Login</a>/
+                            <a href="/ko/register">Register</a>
+                                    </div>
+            </div>
+        </nav>
+    </div>
+</section>    <!--#siteHeader-->
+    <header id="siteHeader" class="site-header sticky">
+        <div class="container header-inner">
+        <h1 class="logo">
+            <a href="/ko">
+                <img src="http://talk.mediain.co.kr/images/logo.png" alt="Logo">
+            </a> 
+        </h1>
+
+        <!--div class="search_box">
+                <form action="/ko/sale" onsubmit="return chkForm(this)" style="margin:0; padding:0; border:none;">
+					<span class='green_window'><input name="keyword" type="text" placeholder="검색어를 3자 이상 입력하세요." class="search_input" onkeyup="" onclick="" value=""></span>
+					<button type='submit' class='search_btn'><i class="fas fa-search"></i></button>
+                </form>
+        </div-->  
+
+
+        <nav class="nav">
+            <!--button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button-->
+
+            <ul id="navbarSupportedContent" class="main-menu">
+                <li>
+                    <b><a href="/ko/sale">치킨</a></b>
+                    <!--ul class="sub-menu">
+                        <li><a href="/ko/sale">치킨</a></li>
+                        <li><a href="/ko/sale/inquiry/0">견적문의</a></li>
+                    </ul-->
+                </li>
+                <!--li>
+                    <b><a> 회 사 정 보 <i class="fas fa-caret-down"></i></a></b>
+                    <ul class="sub-menu">
+                        <li><a href="/ko/contact/location">회사소개</a></li>
+                        <li><a href="/ko/contact/mainbrand">주요브랜드</a></li>
+                        <li><a href="/ko/contact/notice">리스트</a></li>
+                        <li><a href="/ko/contact/news">게시판</a></li>
+                    </ul>
+                </li>
+                <li class="item-cart">
+                    <div class="cart">
+                        <a href="/ko/cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge count-cart">1</span>
+                        </a>
+                    </div>
+                </li-->
+            </ul>
+                    <div class="cart">
+                        <a href="/ko/cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge count-cart">1</span>
+                        </a>
+                    </div>
+        </nav>
+    </div>
+</header>
+    <!--#Breadcrumb-->
+        <section id="siteBreadcrumb" class="site-breadcrumb">
+    <div class="container">
+        <ul>
+                                                                        <li>
+                            <a href="/ko">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                                                                                    <li>
+                        <i class="fas fa-angle-right"></i>
+                        주문완료                    </li>
+                                    </ul>
+    </div>
+</section>
+    <!--#siteMain-->
+<!--    <div class="content">-->
+        <!--#siteMain-->
+<section id="siteMain" class="site-main">
+
+    <div class="container">
+        <h2 class="form-title">주문완료</h2>
+        
+            <ul class="cart-list">
+                                    <li class="cart" data-id="316">
+                        <div class="cart_part_number">
+                            우리블랙시크릿오리지날                        </div>
+                        <div class="cart_quantity">
+                            <input type="number" name="qty" value="1" min="1" max="100000" step="1"/>
+                        </div>
+                        <div class="cart_price">
+                            <input type="text" class="double text-right form-control" name="price" value="20000" min="0" max="9000000" maximumFractionDigits="5"/>
+                        </div>
+                        <div class="cart_amount">
+                                                    20,000                        </div>
+                        <div class="cart_action">
+                            <a class="btn btn-sm btn-outline-secondary" title="삭제" href="/ko/cart/delete/316">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+                    </li>
+                            </ul>
+            <div class="total_item text-right">
+                <div>
+                    총 구매액 :
+                    <span class="amount_item">20,000</span>
+                </div>
+                <div>
+                    V.A.T :
+                    <span class="amount_vat">2,000</span>
+                </div>
+            </div>
+            <div class="total text-right">
+                <div>
+                    전체 :
+                    <span class="amount_total">22,000</span>
+                </div>
+            </div>
+            <!--div class="memo">
+                <div class="form-group">
+                    <textarea class="form-control" name="memo_content" rows="5" placeholder="Memo"></textarea>
+                </div>
+            </div-->
+
+            <form id="frm-cart" method="post" action="/ko/cart/create">
+                <input type="hidden" name="inquiry_code" value="IQR1729557933" required/>
+                <input type="hidden" name="member_id" value="" required/>
+                    <!--div class="form-group">
+                        <label class="form-label" for="name">
+                            이름                            <code>*</code>
+                        </label>
+                        <input id="name" type="text" class="form-control" name="name" value="" placeholder="이름" aria-describedby="name"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            E-Mail                            <code>*</code>
+                        </label>
+                        <input id="email" type="email" class="form-control" name="email" value="" placeholder="E-Mail" aria-describedby="email"/>
+                    </div-->
+                    <div class="form-group">
+                        <label class="form-label" for="tel">
+                            연락처                            <code>*</code>
+                        </label>
+                        <input id="tel" type="tel" class="form-control" name="tel" value="" placeholder="연락처" required/>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="inquiry_title">
+                            주소                            <code>*</code>
+                        </label>
+                        <input id="title" type="text" class="form-control" name="title" value="" placeholder="주소" aria-describedby="title" required/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>결제분류<code>*</code></label>
+                        <div class="form-inline">
+                            <div class="form-check mr-5">
+                                <input class="form-check-input" name="payment_mode" type="radio" value="1" id="cash">
+                                <label class="form-check-label" for="cash">현금결제</label>
+                            </div>
+                            <div class="form-check mr-5">
+                                <input class="form-check-input" name="payment_mode" type="radio" value="2" checked id="card">
+                                <label class="form-check-label" for="card">카드결제</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" name="payment_mode" type="radio" value="3" id="transfer">
+                                <label class="form-check-label" for="transfer">계좌이체</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="memo_content">
+                            전달사항                            <code>*</code>
+                        </label>
+                        <textarea id="memo_content" class="form-control" name="memo_content" placeholder="전달사항" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-action">
+                        <button type="submit" class="btn btn-submit btn-login w-100" id="btn-submit" name="submit">
+                            주문하기                        </button>
+                    </div>
+
+            <!--div class="cart-button text-center">
+                <input type="hidden" name="str_ids"/>
+                <input type="hidden" name="cart_type"/>
+                <button class="btn btn-secondary btn-check-quote" type="button" data-type="1"
+                        data-url="/ko/cart/check-quote/">
+                    체크요청                </button>
+                <button class="btn btn-danger btn-all-quote ml-md-4" type="button" data-type="2"
+                        data-url="/ko/cart/all-quote">
+                    전체요청                </button>
+            </div-->
+            
+        </form>
+        
+        <!--sale.inquiry.create -->
+
+    </div>
+
+</section>
+<!--    </div>-->
+    <footer id="siteFooter" class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="flogo"><a href="/"><img src=" http://talk.mediain.co.kr/images/logo.png" alt=""/></a></h1>
+                <!--nav class="socials">
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-youtube-square"></i></a>
+                </nav-->
+            </div>
+            <div class="col-12 col-md-8">
+                <!--nav class="nav">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" class="parent"> 상품분류 </a>
+                            <a href="/ko/sale">치킨</a>
+                            <a href="/ko/contact/inquiry">견적문의</a>
+                        </li>
+                        <li>
+                            <a href="#" class="parent"> 회 사 정 보 </a>
+                            <a href="/ko/contact/location">회사소개</a>
+                            <a href="/ko/contact/mainbrand">주요브랜드</a>
+                            <a href="/ko/contact/notice">리스트</a>
+                            <a href="/ko/contact/news">게시판</a>
+                        </li>
+                    </ul>
+                </nav-->
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+            <p>Copyright &copy; <a href="/ko">talk.mediain.co.kr</a>. All rights reserved<a href="/ko/contact/notice">.</a></p>
+    </div>
+</footer>
+    <!--Body Js-->
+    <!-- Optional JavaScript -->
+     <script src="http://talk.mediain.co.kr/js/guest/modal_ko.js"></script>
+    <!-- Validation JS -->
+    <script src="http://talk.mediain.co.kr/js/jquery.validate.js"></script>
+    <script src="http://talk.mediain.co.kr/js/additional-methods.min.js"></script>
+    <script src="http://talk.mediain.co.kr/js/jquery.validator.addMethod.js"></script>
+            <script>
+            let validation = null;
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            var stickyOffset = $('.sticky').offset().top;
+
+            $(window).scroll(function(){
+                var sticky = $('.sticky'),
+                    scroll = $(window).scrollTop();
+
+                if (scroll >= stickyOffset) sticky.addClass('fixed');
+                else sticky.removeClass('fixed');
+            });
+
+            // set min height for main content
+            var siteHeader = $('#siteHeader').height(),
+                siteSubHead = $('#siteSubHead').height(),
+                siteFooter = $('#siteFooter').height(),
+                siteViewport = $(window).height();
+            $('#siteMain').css('min-height', siteViewport - siteFooter - siteHeader - siteSubHead);
+        })
+    </script>
+
+        <script src="http://talk.mediain.co.kr/js/guest/bootstrap-input-spinner.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/form.input.number.js"></script>
+    <script src="http://talk.mediain.co.kr/js/guest/cart.js"></script>
+    <script>
+        $("input[type='number']").inputSpinner();
+        CartJS.init();
+    </script>
+
+    <!-- Input hide -->
+    <input type="hidden" name="is_login" value="0"/>
+
+    <!-- Include Model -->
+    <style>
+    .loading{
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        height: 100%;
+        width: 100%;
+        display: fixed;
+        justify-content: center;
+        align-items: center;
+        z-index: 1072;
+
+    }
+    .loading img{
+        position: absolute;
+        z-index: 1073;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 200px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    @media (max-width: 767px){
+        .loading img{
+            width: 120px;
+        }
+    }
+</style>
+
+<div class='loading' id="loading" style="display: none">
+    <img src="http://talk.mediain.co.kr/images/spiner.svg" alt="loading"/>
+</div>
+    <!-- Modal -->
+    <div class="modal fade show" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog modal-success" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal title</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p> <span id="confirm-content"></span> ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary name-cancel btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                <form class="inline" action="route" method="post" id="formHolder">
+                    <button class="btn btn-success name-ok btn-ok" type="button">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function dataSuccessPopup() {
+        $('.successPopupClick').each(function () {
+            $(this).on('click', function () {
+                let $url = $(this).attr('data-url');
+                let $dataContent = $(this).attr('data-content');
+                let $title = $(this).attr('data-title');
+                let $nameCancel = $(this).attr('data-name-cancel');
+                let $nameOK = $(this).attr('data-name-ok');
+                $('#successModal #formHolder').attr('action', $url);
+                $('#successModal #confirm-content').html($dataContent);
+                $('#successModal .modal-title').html($title);
+                $('#successModal .name-cancel').html($nameCancel);
+                $('#successModal .name-ok').html($nameOK);
+                $('#successModal').modal();
+            });
+        });
+
+    }
+    $(document).ready(function () {
+        dataSuccessPopup();
+    })
+</script>
+    <div class="modal fade show" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog modal-danger" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal title</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p> <span id="confirm-content"></span> ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary name-cancel btn-cancel" type="button" data-dismiss="modal">Cancel</button>
+                <form class="inline" action="route" method="post" id="formHolder">
+                    <button class="btn btn-danger name-ok btn-ok" type="button">OK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function dataDangerPopup() {
+        $('.dangerPopupClick').each(function () {
+            $(this).on('click', function () {
+                let $url = $(this).attr('data-url');
+                let $dataContent = $(this).attr('data-content');
+                let $title = $(this).attr('data-title');
+                let $nameCancel = $(this).attr('data-name-cancel');
+                let $nameOK = $(this).attr('data-name-ok');
+                $('#dangerModal #formHolder').attr('action', $url);
+                $('#dangerModal #confirm-content').html($dataContent);
+                $('#dangerModal .modal-title').html($title);
+                $('#dangerModal .name-cancel').html($nameCancel);
+                $('#dangerModal .name-ok').html($nameOK);
+            });
+        });
+
+    }
+    $(document).ready(function () {
+        dataDangerPopup();
+    })
+</script>
+
+    <!-- Data Validation -->
+    <div class="hide">
+    <input type="hidden" name="url_validation_is_unique" value="/validation/is-unique"/>
+</div>
+</body>
+</html>

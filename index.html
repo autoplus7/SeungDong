@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>핸드폰 번호로 로그인</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .login-image {
+            width: 400px;
+            height: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 0.8em;
+        }
+
+        .phone-prefix {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* 버튼 크기 줄임 및 센터 정렬 */
+        button {
+            padding: 6px 12px;
+            font-size: 0.9em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 80px;
+            display: block;
+            margin: 0 auto; /* 센터 정렬 */
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        small {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- aitipimg 폴더 내의 로고.png 파일을 참조 -->
+        <div class="image-container">
+            <img src="aitipimg/img/mainIntro.png" alt="로고 이미지" class="login-image">
+
+        </div>
+
+        <!-- 핸드폰 번호 입력 필드 -->
+        <form id="loginForm">
+            <label for="phone">핸드폰 번호를 넣어 주세요</label>
+            <div>
+                <span class="phone-prefix">010-</span>
+                <input type="text" id="phone" name="phone" placeholder="8자리 번호" maxlength="8" pattern="[0-9]{8}" required>
+            </div>
+            <small>예: 12345678</small>
+
+            <!-- 로그인 버튼 -->
+            <button type="submit">로그인</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // 폼이 제출되는 것을 막음
+
+            const phoneNumberSuffix = document.getElementById('phone').value;
+
+            // 8자리 번호가 올바르게 입력되었는지 확인
+            if (phoneNumberSuffix.length === 8 && !isNaN(phoneNumberSuffix)) {
+                const fullPhoneNumber = `010-${phoneNumberSuffix}`;
+                // main02.html로 핸드폰 번호를 URL에 포함하여 이동
+                window.location.href = `main02.html?phone=${fullPhoneNumber}`;
+            } else {
+                alert('올바른 8자리 번호를 입력해주세요.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 완료</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+
+        .welcome-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* 상단 바 스타일 */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 홈 버튼과 그룹 사이 간격 */
+            margin-bottom: 10px;
+        }
+
+        /* 홈 버튼 스타일 - 작게 조정 */
+        .home-button {
+            padding: 6px 12px;
+            font-size: 0.8em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 이미지 + 환영 메시지 그룹 */
+        .welcome-group {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* 이미지와 텍스트 사이 간격 */
+        }
+
+        /* 이미지 스타일 */
+        .small-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .welcome-message {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .phone-number {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* 줄 스타일 */
+        .divider {
+            border-top: 1px solid #87CEEB; /* 하늘색 선 */
+            margin: 10px 0;
+        }
+
+        /* 버튼 스타일 */
+        .menu-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+        }
+
+        .menu-button {
+            padding: 8px 12px;
+            border: 1px solid #87CEEB; /* 기본 하늘색 외곽선 */
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #333333; /* 진한 회색 텍스트 */
+            background-color: white;
+            cursor: pointer;
+            text-align: center;
+            flex: 1;
+        }
+
+        .menu-button:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* 버튼 클릭 시 스타일 */
+        .menu-button:active {
+            border-color: #FFD700; /* 클릭 시 외곽선 노란색 */
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <!-- 상단 바: 작은 홈 버튼 + 이미지와 환영 메시지 그룹 -->
+        <div class="header">
+            <a href="index.html" class="home-button">홈</a>
+            <div class="welcome-group">
+                <img src="aitipimg/로고.png" alt="로고 아이콘" class="small-icon">
+                <div class="welcome-message">
+                    환영합니다! <span class="phone-number" id="phoneNumber"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 줄 -->
+        <div class="divider"></div>
+
+        <!-- 하단 버튼 -->
+        <div class="menu-buttons">
+            <button class="menu-button">검색</button>
+            <button class="menu-button">주문</button>
+            <button class="menu-button">예약</button>
+            <button class="menu-button">구매</button>
+            <button class="menu-button">My</button>
+        </div>
+    </div>
+
+    <script>
+        // URL에서 쿼리 파라미터로 전달된 핸드폰 번호를 추출
+        const params = new URLSearchParams(window.location.search);
+        const phoneNumber = params.get('phone');
+
+        // 핸드폰 번호를 페이지에 표시
+        document.getElementById('phoneNumber').textContent = phoneNumber;
+    </script>
+</body>
+</html>
